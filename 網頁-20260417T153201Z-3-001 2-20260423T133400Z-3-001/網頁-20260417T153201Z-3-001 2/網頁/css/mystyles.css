@@ -1,0 +1,79 @@
+/* --- 1. 更換全站字體 --- */
+/* 選取 body 和所有標題，以及 subheading，將字體設為思源黑體 */
+/* "Noto Sans TC" 必須對應我們在 HTML 中 <link> 引入的字體名稱 */
+body, h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1, .subheading {
+font-family: "Noto Sans TC", sans-serif;
+text-transform: none; /* 取消模板預設的英文字母大寫 */
+}
+/* 範例中，我們保留 h2 的大寫樣式，讓區塊標題更顯眼 */
+h2 {
+text-transform: uppercase;
+}
+/* --- 2. 更換主題顏色 --- */
+/* :root 代表文件的根元素 (<html>) */
+/* 我們在這裡覆蓋 Bootstrap 預設的 CSS 變數 */
+:root {
+/* 將 --bs-primary-rgb (主色) 的 RGB 值改掉 */
+/* 範例使用的是 25, 25, 112 (深藍色) */
+--bs-primary-rgb: 25, 25, 112;
+/* (可選) 順便統一連結顏色 */
+--bs-link-color: hsl(201, 100%, 65%);
+--bs-link-hover-color: hsl(201, 100%, 65%);
+}
+/* (可選) 同步修改社群圖示的 hover 顏色 */
+.social-icons .social-icon:hover {
+background-color: hsl(201, 100%, 65%);
+}
+/* --- 3. 更換區塊背景 --- */
+
+/* 這裡修改右側內容區：變為淺藍色平整底色 */
+.resume-section {
+    /* 使用原本左側的淺藍色 */
+    background-color: #caefffaa !important; 
+    /* 取消右側的背景圖片 */
+    background-image: none !important; 
+}
+
+/* 這裡修改左側側邊欄：變為深色並加上材質感 */
+.bg-primary {
+    /* 設定深藍色底色 */
+    background-color: #89dfffbd !important; 
+    /* 加入原本右側使用的材質圖片路徑 */
+    background-image: url("../assets/img/black-linen.png");
+    /* 設定混合模式讓材質顯現出來 */
+    background-blend-mode: multiply;
+}
+
+.social-icons .social-icon :hover{
+    background-color:#a5d2e8 ;
+}
+
+.text-primary{
+    color:#a5d2e8 !important;
+    font-size: calc(1.25rem+5.7px)
+}
+
+a{
+    color:#a5d2e8;
+}
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1{
+    font-family: "Noto Sana TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+h1, .h1{
+    font-weight: 600;
+}
+
+h2, .h2{
+    font-weight: 400;
+}
+
+.subheading{
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 300;
+    text-transform: none;
+    font-size: 1.2rem;
+}
